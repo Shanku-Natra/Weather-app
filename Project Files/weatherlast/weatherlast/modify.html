@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER APP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="modstyle.css">
+</head>
+
+<body>
+    <div class="outer" id="out">
+        <div class="inner">
+            <form class="search">
+                <input type="text" placeholder="Enter City Name" spellcheck="false">
+                <button><i class="fa-solid fa-magnifying-glass search-b"></i></button>
+            </form>
+            <div class="loc weather__location-btn" id="geobtn"><i class="fa-solid fa-location"></i></div>
+
+            <div class="error">
+                <p>Please Enter Valid City Name</p>
+            </div>
+            <div class="weather">
+                <img src="./gifday.svg" class="weather-icon">
+
+                <span>
+                    <p class="weatherdesc"></p>
+                </span>
+
+                <h1 class="temp"></h1>
+
+                <span class="city"></span><i class="fa-solid fa-location-dot city-nav"></i>
+
+                <div class="details">
+                    <div class="col">
+                        <img src="./humidity.png" class="i1">
+                        <div>
+                            <p>Humidity</p>
+                            <p class="humidity"></p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="./wind.png">
+                        <div>
+                            <p>Wind</p>
+                            <p class="wind"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-icon">
+                <button class="open-cart" onclick="showCart()">Detailed Report</button>
+            </div>
+
+        </div>
+
+        <div class="cart-overlay" id="cart-container" style="display: none;">
+            <div class="cart-items">
+                <div class="cart-header">
+                    <h3>Detailed Weather Report</h3>
+                    <button class="close-icon" onclick="hiddenCart()"><i class="fas fa-times"></i></button>
+                </div>
+                <div id="detail" class="detail">
+                    <table>
+                        <tr>
+                            <th>City</th>
+                            <th> Temparature (°c)</th>
+                            <th> weather </th>
+                            <th> Humidity (%)</th>
+                            <th> Pressure (hPa)</th>
+                            <th>Maximum Temparature (°c)</th>
+                            <th>Minimum Temparature (°c)</th>
+                            <th> Wind Speed (Km/hr)</th>
+                        </tr>
+                        <tr>
+                            <td class="cityname"></td>
+                            <td class="temperature"></td>
+                            <td class="desc"></td>
+                            <td class="humid"></td>
+                            <td class="pressure"></td>
+                            <td class="max_temp"></td>
+                            <td class="min_temp"></td>
+                            <td class="windspeed"></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./modjs.js"></script>
+
+</body>
+
+</html>
